@@ -40,18 +40,26 @@ public class SqlComponent extends UriEndpointComponent {
 
     public SqlComponent() {
         super(SqlEndpoint.class);
+        
+        registerExtension(SqlComponentVerifierExtension::new);
     }
 
     public SqlComponent(Class<? extends Endpoint> endpointClass) {
         super(endpointClass);
+        
+        registerExtension(SqlComponentVerifierExtension::new);
     }
 
     public SqlComponent(CamelContext context) {
         super(context, SqlEndpoint.class);
+        
+        registerExtension(SqlComponentVerifierExtension::new);
     }
 
     public SqlComponent(CamelContext context, Class<? extends Endpoint> endpointClass) {
         super(context, endpointClass);
+        
+        registerExtension(SqlComponentVerifierExtension::new);
     }
 
     @Override

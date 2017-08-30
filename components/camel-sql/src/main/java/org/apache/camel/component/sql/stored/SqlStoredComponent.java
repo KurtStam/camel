@@ -28,6 +28,10 @@ public class SqlStoredComponent extends DefaultComponent {
 
     private DataSource dataSource;
 
+    public SqlStoredComponent() {
+        registerExtension(SqlStoredComponentVerifierExtension::new);
+    }
+    
     @Override
     protected Endpoint createEndpoint(String uri, String template, Map<String, Object> parameters) throws Exception {
         DataSource target = null;
