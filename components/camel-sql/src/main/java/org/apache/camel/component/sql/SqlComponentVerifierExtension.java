@@ -80,7 +80,7 @@ public class SqlComponentVerifierExtension extends DefaultComponentVerifierExten
             }
         } catch (Exception e) {
             ResultErrorBuilder errorBuilder = ResultErrorBuilder.withCodeAndDescription(
-                    VerificationError.StandardCode.AUTHENTICATION, e.getMessage());
+                    VerificationError.StandardCode.AUTHENTICATION, e.getClass() + ": " + e.getMessage());
             builder.error(errorBuilder.build());
         }
     }
